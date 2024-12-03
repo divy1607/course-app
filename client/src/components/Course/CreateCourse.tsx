@@ -12,7 +12,7 @@ export default function CreateCourse() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post('/api/courses', {
+      const { data } = await axios.post('http://localhost:5000/api/courses', {
         title,
         description,
         price: Number(price)

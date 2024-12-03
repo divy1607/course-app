@@ -9,7 +9,7 @@ export default function CourseList() {
 
   useEffect(() => {
     const fetchCourses = async () => {
-      const { data } = await axios.get('/api/courses');
+      const { data } = await axios.get('http://localhost:5000/api/courses');
       setCourses(data);
     };
     fetchCourses();
@@ -17,7 +17,7 @@ export default function CourseList() {
 
   const handleEnroll = async (courseId: string) => {
     try {
-      const { data } = await axios.post('/api/payments/create-checkout', {
+      const { data } = await axios.post('http://localhost:5000/api/payments/create-checkout', {
         courseId
       });
       window.location.href = data.url;
